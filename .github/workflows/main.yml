@@ -1,0 +1,3 @@
+git add .github/workflows/blazemeter-test.yml
+git commit -m "Add BlazeMeter integration workflow"
+git push origin main
