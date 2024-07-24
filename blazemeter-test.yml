@@ -1,0 +1,33 @@
+name: Run BlazeMeter Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  blazemeter:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Run BlazeMeter Test
+      env:
+        API_KEY_ID: "6e1520724198ed12f03e38fa"
+        API_SECRET_KEY: "8dda666dab32b1b659d1b3413c65315f5d7dc4e47b519466ef1afed618860f85c3e469da"
+        TEST_ID: "14272088"  # Replace with your actual test ID
+      run: |
+        echo "Starting BlazeMeter Test..."
+        AUTH=$(echo -n "$API_KEY_ID:$API_SECRET_KEY" | base64)
+        RESPONSE=$(curl -s -X POST \
+          "https://a.blazemeter.com/app/#/accounts/1323556/workspaces/1363658/projects/2400554/tests/$TEST_ID/start" \
+          -H "Authorization: Basic $AUTH" \
+          -H "Content-Type: application/json" \
+          -d '{"configuration": {"name": "GitHub Action Triggered Test"}}')
+
+        echo "BlazeMeter Response: $RESPONSE"
