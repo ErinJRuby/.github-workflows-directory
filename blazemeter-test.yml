@@ -28,7 +28,7 @@ jobs:
         echo "Starting BlazeMeter Test..."
         AUTH=$(echo -n "$API_KEY_ID:$API_SECRET_KEY" | base64)
         RESPONSE=$(curl -s -X POST \
-          "https://a.blazemeter.com/api/v4/tests/$TEST_ID/start" \
+          "https://a.blazemeter.com/app/#/accounts/1323556/workspaces/1363658/projects/2374740/tests/$TEST_ID/start" \
           -H "Authorization: Basic $AUTH" \
           -H "Content-Type: application/json" \
           -d '{"configuration": {"name": "GitHub Action Triggered Test"}}')
