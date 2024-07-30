@@ -1,4 +1,4 @@
-name: Run BlazeMeter Test  # Workflow name
+name: Run BlazeMeter Test Execution  # Workflow name
 
 on:
   push:
