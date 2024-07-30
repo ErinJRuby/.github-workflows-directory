@@ -20,7 +20,7 @@ jobs:
         env:
           API_KEY_ID: "6e1520724198ed12f03e38fa"  # Replace with actual API Key ID
           API_SECRET_KEY: "8dda666dab32b1b659d1b3413c65315f5d7dc4e47b519466ef1afed618860f85c3e469da"  # Replace with actual Secret Key
-          TEST_ID: "14287518"  # Replace with actual Test ID
+          TEST_ID: "14197754"  # Replace with actual Test ID
         run: |
           echo "Starting BlazeMeter Test..."
           AUTH=$(echo -n "$API_KEY_ID:$API_SECRET_KEY" | base64)
